@@ -49,9 +49,6 @@ export class RestaurantInput extends Component {
   }
 };
 
-const mapStateToProps = state => {
-  return { restaurants: state.restaurants }
-}
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -60,4 +57,4 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(RestaurantInput)
+export default connect(mapDispatchToProps)(RestaurantInput)
