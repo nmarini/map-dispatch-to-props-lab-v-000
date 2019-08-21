@@ -23,38 +23,30 @@ export class RestaurantInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addRestaurant(this.state)
+    this.props.addRestaurant(this.state);
   }
 
   render() {
-     return(
-       <form onSubmit={(event) => this.handleOnSubmit(event)}>
-         <p>
-           <input
-             type="text"
-             onChange={(event) => this.handleOnNameChange(event)}
-             value={this.state.name}
-             placeholder="restaurant name" />
-         </p>
-         <p>
-           <input
-             type="text"
-             onChange={(event) => this.handleOnLocationChange(event)}
-             value={this.state.location}
-             placeholder="location" />
-         </p>
-         <input type="submit" />
-       </form>
-     );
-   }
- };
-
-
-const mapDispatchToProps = dispatch => {
-  return {
-    addRestaurant: () => {
-      dispatch(addRestaurant())
-    }
+    return(
+      <form onSubmit={(event) => this.handleOnSubmit(event)}>
+        <p>
+          <input
+            type="text"
+            onChange={(event) => this.handleOnNameChange(event)}
+            value={this.state.name}
+            placeholder="restaurant name" />
+        </p>
+        <p>
+          <input
+            type="text"
+            onChange={(event) => this.handleOnLocationChange(event)}
+            value={this.state.location}
+            placeholder="location" />
+        </p>
+        <input type="submit" />
+      </form>
+    );
   }
-}
-export default connect(null, mapDispatchToProps)(RestaurantInput)
+};
+
+export default connect(null, { addRestaurant })(RestaurantInput);
